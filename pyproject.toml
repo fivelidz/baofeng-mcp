@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baofeng-mcp"
+version = "0.1.0"
+description = "MCP server for controlling Baofeng DMR radios (DM-32UV, DM-1701, DM-1801)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "RFAI Project"}]
+keywords = ["mcp", "baofeng", "dmr", "radio", "model-context-protocol"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Communications :: Ham Radio",
+]
+
+dependencies = [
+    "mcp>=1.0.0",
+    "pyserial>=3.5",
+]
+
+[project.scripts]
+baofeng-mcp = "baofeng_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/fivelidz/baofeng-mcp"
+
+[tool.setuptools.packages.find]
+where = ["src"]
